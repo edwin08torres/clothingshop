@@ -49,18 +49,19 @@ export const HeroParallax = ({
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
+    useTransform(scrollYProgress, [0, 0.3], [-700, 0]),
     springConfig
   );
   return (
     <div
       ref={ref}
       className="
-      hidden md:flex
-      h-[180vh]        md:h-[320vh]      lg:h-[320vh]      xl:h-[305vh]
-      w-full py-40 overflow-hidden antialiased
-      relative flex-col self-auto
-      [perspective:1000px] [transform-style:preserve-3d]
+       hidden md:flex
+    min-h-[150vh]          /* mejor que un height fijo muy grande   */
+    lg:min-h-[220vh]
+    w-full overflow-hidden relative flex-col
+    z-10                   /* Hero siempre encima si así lo quieres */
+    [perspective:1000px] [transform-style:preserve-3d]
     "
     >
       <Header />

@@ -3,45 +3,51 @@ import { motion } from "motion/react";
 
 export default function AboutSection() {
   return (
-    <section className="px-4 py-6 lg:py-24 md:py-6 bg-white mt-12">
-      <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-2 items-center shadow-xl rounded-3xl">
-        {/* imagen */}
-        <motion.img
-          src="/assets/about.jpg"
-          alt="Tela de algodón orgánico"
-          className="rounded-b-xl md:rounded-b-none lg:rounded-l-3xl shadow-xl w-full h-full object-cover"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        />
+    <section className="relative w-full h-[130vh] overflow-hidden">
+      {/* Fondo con imagen y animación zoom-out */}
+      <motion.div
+        className="absolute inset-0 bg-[url('/assets/about.jpg')] bg-center bg-cover"
+        initial={{ scale: 1.2 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      />
 
-        <article className="flex flex-col items-center justify-center px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center md:py-6 ">
-            Ropa consciente. <br /> Estilo atemporal.
-          </h2>
+      {/* Capa semi-transparente para mejorar lectura */}
+      <div className="absolute inset-0 bg-black/30" />
 
-          <p className="text-gray-700 leading-relaxed mb-4">
-            En <strong>Loomcraft</strong> diseñamos prendas minimalistas
-            hechas con algodón orgánico certificado y tintes a base de agua.
-            Producimos en <em>lotes pequeños</em> para evitar sobre‑stock y
-            reducir desperdicios.
-          </p>
+      {/* Texto centrado */}
+      <motion.article
+        className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center max-w-2xl mx-auto"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          Ropa consciente. <br /> Estilo atemporal.
+        </h2>
 
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Cada pieza es confeccionada por artesanos locales en condiciones de
-            trabajo justas. Creemos que la moda no debe costarle al planeta ni a
-            las personas que la crean.
-          </p>
+        <p className="text-white/90 leading-relaxed mb-4">
+          En <strong>Loomcraft</strong> diseñamos prendas minimalistas hechas con algodón
+          orgánico certificado y tintes a base de agua. Producimos en{' '}
+          <em>lotes pequeños</em> para evitar sobre-stock y reducir desperdicios.
+        </p>
 
-          <a
-            href="#products"
-            className="inline-block rounded-full bg-white shadow-md text-black px-8 py-3 font-semibold hover:opacity-90 transition mb-4 hover:bg-slate-200"
-          >
-            Explorar colección
-          </a>
-        </article>
-      </div>
+        <p className="text-white/90 leading-relaxed mb-8">
+          Cada pieza es confeccionada por artesanos locales en condiciones de trabajo
+          justas. Creemos que la moda no debe costarle al planeta ni a las personas que
+          la crean.
+        </p>
+
+        <motion.a
+          href="#products"
+          className="inline-block rounded-full bg-white text-black px-8 py-3 font-semibold shadow hover:opacity-90 transition"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Explorar colección
+        </motion.a>
+      </motion.article>
     </section>
   );
 }

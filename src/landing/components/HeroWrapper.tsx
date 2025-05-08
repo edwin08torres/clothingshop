@@ -1,27 +1,25 @@
 import type { Card } from "./HeroCarouselMobile";
 import { HeroParallax } from "./HeroParallax";
 import HeroCarouselMobile from "./HeroCarouselMobile";
-import HeroHighlightSection from "./HeroHighlightSection"; 
-import { useBreakpoint } from "@/shared/hooks/useBreakpoint";
+import HeroHighlightSection from "./HeroHighlightSection";
 
 interface Props {
   products: Card[];
 }
 
 export default function HeroWrapper({ products }: Props) {
-  const isMdUp = useBreakpoint("md");
-
-  // desktop
-  if (isMdUp) {
-    return <HeroParallax products={products} />;
-  }
-
-  // mobile
   return (
     <>
-      <HeroHighlightSection />
+      {/* desktop */}
+      <div className="hidden md:block">
+        <HeroParallax products={products} />
+      </div>
 
-      <HeroCarouselMobile products={products} />
+      {/* mobile */}
+      <div className="block md:hidden">
+        <HeroHighlightSection />
+        <HeroCarouselMobile products={products} />
+      </div>
     </>
   );
 }
