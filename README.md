@@ -1,4 +1,4 @@
-# 🛍️ ClothingShop
+# 🛍️ Loomcraft
 
 Minimalist e‑commerce demo built with **React + TypeScript + Vite** and styled with **Tailwind CSS v4**.  Animations and eye‑candy come from **Aceternity UI** (Framer Motion‑powered).
 

@@ -22,7 +22,7 @@ export default function AboutSection() {
           </h2>
 
           <p className="text-gray-700 leading-relaxed mb-4">
-            En <strong>ClothingShop</strong> diseñamos prendas minimalistas
+            En <strong>Loomcraft</strong> diseñamos prendas minimalistas
             hechas con algodón orgánico certificado y tintes a base de agua.
             Producimos en <em>lotes pequeños</em> para evitar sobre‑stock y
             reducir desperdicios.

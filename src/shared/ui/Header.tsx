@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <header className="relative bg-white shadow-md h-16 flex items-center justify-between px-4">
       <Link to="/" className="font-bold">
-        ClothingShop
+      Loomcraft
       </Link>
 
       <nav className="hidden lg:flex gap-6">
@@ -43,7 +43,7 @@ export const Header = () => {
           ${menuOpen ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        <Link to="/"   onClick={() => setMenuOpen(false)} className="font-bold">ClothingShop</Link>
+        <Link to="/"   onClick={() => setMenuOpen(false)} className="font-bold">Loomcraft</Link>
         <Link to="/contact" onClick={() => setMenuOpen(false)}>Contacto</Link>
         <Link to="/gallery" onClick={() => setMenuOpen(false)}>Galería</Link>
       </nav>
