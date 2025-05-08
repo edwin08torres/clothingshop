@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+
+  .link-nav-lg::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(50%);
+    background: radial-gradient(circle, #001c9b 0%, transparent 70%);
+    opacity: 0;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: -1;
+  }

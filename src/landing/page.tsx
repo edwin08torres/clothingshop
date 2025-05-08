@@ -1,15 +1,14 @@
-import HeroWrapper      from "./components/HeroWrapper";
-// import FeaturesSection   from "./components/FeaturesSection";
-// … cualquier otra sección
+import AboutSection from "./components/AboutSection";
+import BenefitsSection from "./components/BenefitsSection";
+import HeroWrapper from "./components/HeroWrapper";
 
-import { useProducts }   from "@/products/hooks/useProducts";
+import { useProducts } from "@/products/hooks/useProducts";
 
 export default function LandingPage() {
-  // mismo loader de productos que tenías en Home
   const { products, loading } = useProducts(15);
-  const heroProducts = products.map(p => ({
+  const heroProducts = products.map((p) => ({
     title: p.title,
-    link:  `/products/${p.id}`,
+    link: `/products/${p.id}`,
     thumbnail: p.image,
   }));
 
@@ -18,8 +17,8 @@ export default function LandingPage() {
   return (
     <>
       <HeroWrapper products={heroProducts} />
-      {/* <FeaturesSection /> */}
-      {/* más secciones… */}
+      <AboutSection/>
+      <BenefitsSection />
     </>
   );
 }

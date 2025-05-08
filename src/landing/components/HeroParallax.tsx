@@ -55,8 +55,13 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="hidden md:flex md:h-[320vh] xl:h-[290vh] py-40 overflow-hidden antialiased
-               relative flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="
+      hidden md:flex
+      h-[180vh]        md:h-[320vh]      lg:h-[320vh]      xl:h-[305vh]
+      w-full py-40 overflow-hidden antialiased
+      relative flex-col self-auto
+      [perspective:1000px] [transform-style:preserve-3d]
+    "
     >
       <Header />
       <motion.div
@@ -110,7 +115,8 @@ export const Header = () => {
       {/* dark:text-neutral-200 */}
       <p className="max-w-2xl text-black text-base md:text-xl mt-8 ">
         Encuentra prendas minimalistas y versátiles para cada momento del día.
-        Fabricamos en lotes pequeños con materiales sostenibles. Luce bien, siéntete mejor.
+        Fabricamos en lotes pequeños con materiales sostenibles. Luce bien,
+        siéntete mejor.
       </p>
     </div>
   );
